@@ -1,0 +1,24 @@
+<div class="flex items-center justify-center w-full mt-5">
+	<div>
+		<div>{{ form_start(form) }}</div>
+		<div>
+			{{ form_errors(form) }}
+		</div>
+		<div>
+			{{ form_label(form.name,'Category Name') }}
+		</div>
+		<div>
+			{{ form_widget(form.name) }}
+		</div>
+		<div class="mt-3">
+			{{ form_widget(form.image) }}
+		</div>
+		<div class="mt-3">
+			<button class="bg-slate-300 px-5 py-3 hover:bg-slate-100">
+				Save
+			</button>
+		</div>
+		<div>{{ form_end(form) }}
+		</div>
+	</div>
+</div></div>

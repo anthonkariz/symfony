@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Sigle product
+{% endblock %}
+
+{% block body %}
+	<h1 class="text-lg font-bold my-3 ">
+		-
+		{{ product.product }}</h1>
+	<div class=" flex">
+		<div class="w-1/2 grid grid-cols-2 gap-2">
+			{% if product.getOneToMany() is empty %}
+				<img src="https://placehold.co/400"/>
+			{% else %}
+				{% for image in product.getOneToMany() %}
+
+					<img src="{{ asset('uploads/' ~ image.image) }}"/>
+				{% endfor %}
+
+			{% endif %}
+
+		</div>
+		<div class="text-left w-1/2">
+			<ul>
+				<li>
+					<span class="font-semibold">Category:
+					</span>
+					{{ category }}</li>
+				<li>
+					<span class="font-semibold">
+						Product Name:
+					</span>
+					{{ product.product }}</li>
+				<li>
+					<span class="font-semibold">
+						Price: £
+					</span>
+					{{ product.price }}</li>
+				<li>
+					<span class="font-semibold">Description:
+					</span>
+					{{ product.description }}</li>
+
+			</div>
+		</div>
+
+	{% endblock %}
